@@ -1,0 +1,5 @@
+package controleur
+
+func Index(){
+	
+}
