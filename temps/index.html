@@ -1,11 +1,36 @@
+{{define "Index"}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JJBA Tracker</title>
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo"><img src="../static/img/logo_jjba.png" alt="logo jojo"></a>
+            <div class="navlink">
+                <a href="/favoris">Favoris</a>
+                <a href="/allstands">Stands</a>
+                <a href="/allcharacters">Manieurs</a>
+            </div>
+            <div class="search">
+                <form action="/recherchetreatment" method="POST">
+                    <input type="text" name="search" placeholder="rechercher">
+                    <button type="submit">search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <a href="/allstands">liste des stands</a>
+        <a href="/allcharacters">liste des manieurs</a>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
+{{end}}

@@ -1,0 +1,25 @@
+{{define "Character"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ctn">
+    <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">    
+        {{.Name}}
+        {{.JapaneseName}}
+        {{.Abilities}}
+        {{.Catchphrase}}
+        {{.Family}}
+        {{.Chapter}}
+        {{.Living}}
+    </div>
+    <div class="btn-fav">
+        <a href="/favoritreatment?id={{.Id}}&type=manieur">add fav</a>
+    </div>
+</body>
+</html>
+{{end}}

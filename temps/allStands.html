@@ -1,0 +1,31 @@
+{{define "AllStands"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/allStands.css">
+</head>
+<body>
+    <a href="/allcharacters">AllCharacters</a>
+
+    {{range .}}
+        <a href="/stand?id={{.Id}}">
+            <div class="card">
+                {{.Id}}
+                {{.Name}}
+                {{.AlternateName}}
+                {{.JapaneseName}}
+                <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">
+                {{.StandUser}}
+                {{.Chapter}}
+                {{.Abilities}}
+                {{.Battlecry}}
+                <a href="/favoritreatment?id={{.Id}}&type=stand">add fav</a>
+            </div>
+        </a>
+    {{end}}
+</body>
+</html>
+{{end}}

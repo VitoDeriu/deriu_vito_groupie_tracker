@@ -1,0 +1,31 @@
+{{define "SearchResult"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    searcg result
+    {{range .ResultCharacter}}
+    <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">    
+        {{.Name}}
+        {{.JapaneseName}}
+        {{.Abilities}}
+        {{.Catchphrase}}
+        {{.Family}}
+        {{.Chapter}}
+        {{.Living}}
+    {{end}}
+    {{range .ResultStand}}
+    <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">    
+        {{.Name}}
+        {{.StandUser}}
+        {{.Chapter}}
+        {{.Abilities}}
+        {{.Battlecry}}
+    {{end}}
+</body>
+</html>
+{{end}}

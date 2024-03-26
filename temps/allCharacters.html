@@ -1,0 +1,176 @@
+{{define "AllCharacters"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/allCharacters.css" />
+</head>
+
+<body>
+    <a href="/allstands">AllStands</a>
+    <div class="filter">
+        <form action="/filtretreatment" method="POST">
+            <fieldset>
+                <legend>Chapitre:</legend>
+                <div>
+                    <input type="radio" id="phantom" name="chapter" value="phantom"/>
+                    <label for="phantom">Phantom Blood</label>
+                </div>
+                <div>
+                    <input type="radio" id="battle" name="chapter" value="battle"/>
+                    <label for="battle">Battle Tendency</label>
+                </div>
+                <div>
+                    <input type="radio" id="stardust" name="chapter" value="stardust"/>
+                    <label for="stardust">Stardust Crusader</label>
+                </div>
+                <div>
+                    <input type="radio" id="diamond" name="chapter" value="diamond"/>
+                    <label for="diamond">Diamond is Unbreakable</label>
+                </div>
+                <div>
+                    <input type="radio" id="stone" name="chapter" value="stone"/>
+                    <label for="stone">Stone Ocean</label>
+                </div>
+                <div>
+                    <input type="radio" id="steel" name="chapter" value="steel"/>
+                    <label for="steel">Steel Ball Run</label>
+                </div>
+                <div>
+                    <input type="radio" id="jojolion" name="chapter" value="jojolion"/>
+                    <label for="jojolion">Jojolion</label>
+                </div>
+                <div>
+                    <input type="reset" value="reset">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Nationalité:</legend>
+                <div>
+                    <input type="radio" id="british" name="nationality" value="british"/>
+                    <label for="british">Britanique</label>
+                </div>
+                <div>
+                    <input type="radio" id="italian" name="nationality" value="italian"/>
+                    <label for="italian">Italien</label>
+                </div>
+                <div>
+                    <input type="radio" id="scottish" name="nationality" value="scottish"/>
+                    <label for="scottish">Ecossais</label>
+                </div>
+                <div>
+                    <input type="radio" id="english" name="nationality" value="english"/>
+                    <label for="english">Anglais</label>
+                </div>
+                <div>
+                    <input type="radio" id="tibetan" name="nationality" value="tibetan"/>
+                    <label for="tibetan">Tibetain</label>
+                </div>
+                <div>
+                    <input type="radio" id="unknown" name="nationality" value="unknown"/>
+                    <label for="unknown">Inconnu</label>
+                </div>
+                <div>
+                    <input type="radio" id="german" name="nationality" value="german"/>
+                    <label for="german">Allemand</label>
+                </div>
+                <div>
+                    <input type="radio" id="pillar" name="nationality" value="pillar"/>
+                    <label for="pillar">Pillar Man</label>
+                </div>
+                <div>
+                    <input type="radio" id="japanese" name="nationality" value="japanese"/>
+                    <label for="japanese">Japonais</label>
+                </div>
+                <div>
+                    <input type="radio" id="egyptian" name="nationality" value="egyptian"/>
+                    <label for="egyptian">Egyptien</label>
+                </div>
+                <div>
+                    <input type="radio" id="french" name="nationality" value="french"/>
+                    <label for="french">Francais</label>
+                </div>
+                <div>
+                    <input type="radio" id="mexican" name="nationality" value="mexican"/>
+                    <label for="mexican">Mexicain</label>
+                </div>
+                <div>
+                    <input type="radio" id="none" name="nationality" value="none"/>
+                    <label for="none">Aucun</label>
+                </div>
+                <div>
+                    <input type="radio" id="neapolitan" name="nationality" value="neapolitan"/>
+                    <label for="neapolitan">Napolitain</label>
+                </div>
+                <div>
+                    <input type="radio" id="galilean" name="nationality" value="galilean"/>
+                    <label for="galilean">Galiléen</label>
+                </div>
+                <div>
+                    <input type="radio" id="american" name="nationality" value="american"/>
+                    <label for="american">Américain</label>
+                </div>
+                <div>
+                    <input type="reset" value="reset">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Humanité:</legend>
+                <div>
+                    <input type="radio" id="ishuman" name="human" value="true"/>
+                    <label for="ishuman">humain</label>
+                </div>
+                <div>
+                    <input type="radio" id="isnothuman" name="human" value="false"/>
+                    <label for="isnothuman">non-humain</label>
+                </div>
+                <div>
+                    <input type="reset" value="reset">
+                </div>
+            </fieldset> 
+            <fieldset>
+                <legend>Vivant:</legend>
+                <div>
+                    <input type="radio" id="isalive" name="alive" value="true">
+                    <label for="isalive">Vivant</label>
+                </div>
+                <div>
+                    <input type="radio" id="isdead" name="alive" value="false">
+                    <label for="isdead">Mort</label>
+                </div>
+                <div>
+                    <input type="reset" value="reset">
+                </div>
+            </fieldset>
+            <button type="submit">filtrer</button>
+        </form>
+    </div>
+
+    <div class="ctn">
+        {{range .}}
+        <a href="/character?id={{.Id}}">
+            <div class="card">
+                <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}" />
+                {{.Id}} 
+                {{.Name}} 
+                {{.JapaneseName}} 
+                {{.Abilities}}
+                {{.Chapter}} 
+                {{.Nationality}} 
+                {{.Catchphrase}} 
+                {{.Family}}
+                {{.Chapter}} 
+                {{.Living}} 
+                {{.IsHuman}}
+                <a href="/favoritreatment?id={{.Id}}&type=manieur">add fav</a>
+            </div>
+        </a>
+        {{end}}
+    </div>
+</body>
+
+</html>
+{{end}}

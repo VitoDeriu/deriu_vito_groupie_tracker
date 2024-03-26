@@ -1,0 +1,41 @@
+{{define "Favoris"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Page favori</h1>
+    {{range .ResultCharacter}}
+    <a href="/character?id={{.Id}}">
+        <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}" />
+        {{.Name}} 
+        {{.JapaneseName}} 
+        {{.Abilities}} 
+        {{.Catchphrase}}
+        {{.Family}} 
+        {{.Chapter}} 
+        {{.Living}}
+        <a href="/favoridelete?id={{.Id}}&type=character"><button>Supprimer</button></a>
+    </a>
+    {{end}} 
+    
+    {{range .ResultStand}}
+    <a href="/stand?id={{.Id}}">
+        <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}" />
+        {{.Name}} 
+        {{.StandUser}} 
+        {{.Chapter}} 
+        {{.Abilities}} 
+        {{.Battlecry}}
+        <a href="/favoridelete?id={{.Id}}&type=stand"><button>Supprimer</button></a>
+    </a>
+    {{end}}
+</body>
+
+</html>
+{{end}}

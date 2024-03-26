@@ -1,0 +1,22 @@
+{{define "Stand"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">
+    {{.Name}}
+    {{.AlternateName}}
+    {{.JapaneseName}}
+    {{.Image}}
+    {{.StandUser}}
+    {{.Chapter}}
+    {{.Abilities}}
+    {{.Battlecry}}
+    <a href="/favoritreatment?id={{.Id}}&type=stand">add fav</a>
+</body>
+</html>
+{{end}}
