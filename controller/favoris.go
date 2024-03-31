@@ -79,6 +79,7 @@ func FavoriDelete(w http.ResponseWriter, r *http.Request) {
 	tipe := (r.URL.Query().Get("type"))
 
 	if tipe == "character"{
+		var ListNewFav []data.Character
 
 		ListFavCharToDel, err := ReadJSONChar()
 		if err != nil {
@@ -86,23 +87,15 @@ func FavoriDelete(w http.ResponseWriter, r *http.Request) {
 			//voir pour mettre un template erreur de lecture de json
 		}
 
-		var ListNewFav []data.Character
-
 		for _, c := range ListFavCharToDel {
 			if c.Id != id {
 				ListNewFav = append(ListNewFav,c)
 			}
 		}
-
-		// for i, _ := range ListFavCharToDel{
-		// 	if ListFavCharToDel[i].Id == id{
-		// 		ListFavCharToDel = append(ListFavCharToDel[:i], ListFavCharToDel[i+1:]... )
-		// 	}
-		// }
-
 		EditJSONChar(ListNewFav)
 
 	} else {
+		var ListNewFavStand []data.Stand
 
 		ListFavStandToDel, err := ReadJSONStand()
 		if err != nil {
@@ -110,23 +103,13 @@ func FavoriDelete(w http.ResponseWriter, r *http.Request) {
 			//voir pour mettre un template erreur de lecture de json
 		}
 
-		var ListNewFavStand []data.Stand
-
 		for _, d := range ListFavStandToDel {
 			if d.Id != id {
 				ListNewFavStand = append(ListNewFavStand, d)
 			}
 		}
-
-		// for i, _ := range ListFavCharToDel{
-		// 	if ListFavCharToDel[i].Id == id{
-		// 		ListFavCharToDel = append(ListFavCharToDel[:i], ListFavCharToDel[i+1:]... )
-		// 	}
-		// }
-
 		EditJSONStand(ListNewFavStand)
 	}
-	
 	http.Redirect(w, r, "/favoris", http.StatusMovedPermanently)
 }
 

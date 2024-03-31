@@ -1,1 +1,15 @@
-null
+[
+    {
+        "id": "25",
+        "name": "Hol Horse",
+        "japaneseName": "ホル・ホース",
+        "image": "holhorse.png",
+        "abilities": "Emperor",
+        "nationality": "Unknown",
+        "catchphrase": "\"Better to be No.2 than No.1\", that's my motto!",
+        "family": "none",
+        "chapter": "Stardust Crusaders",
+        "living": false,
+        "isHuman": true
+    }
+]

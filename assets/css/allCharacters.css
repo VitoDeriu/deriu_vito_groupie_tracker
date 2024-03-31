@@ -1,7 +1,59 @@
-.card{
-    margin: 20px;
-}
-
 img{
     height: 20vh;
 }
+
+*{
+    text-decoration: none;
+}
+
+.filter{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+}
+
+.chapter{   
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+}
+
+.nationality{
+    display: flex;
+}
+
+.ishuman{
+    display: flex;
+}
+
+.isalive{
+    display: flex;
+}
+
+.ctn{
+    background-color: yellow;
+}
+
+.ctn-cards{
+    background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: aqua;
+    width: 20vw;
+    margin: 2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    
+}
+
+
+/* font-family: "Fedora"; */

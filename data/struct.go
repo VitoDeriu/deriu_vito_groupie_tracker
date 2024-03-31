@@ -1,8 +1,23 @@
-package data
+	package data
 
 type ResultSearch struct {
 	ResultCharacter []Character
-	ResultStand []Stand
+	ResultStand     []Stand
+}
+
+//struct pour l'envoi dans les templates
+type DataPaginate struct {
+	CharList []Character
+	StandList []Stand
+	PageData  Page
+}
+
+// struct pour le systeme de pagination
+type Page struct {
+	CurrentPage  int
+	NextPage     int
+	PreviousPage int
+	MaxPage      int
 }
 
 type Stand struct {
@@ -30,4 +45,3 @@ type Character struct {
 	Living       bool   `json:"living"`
 	IsHuman      bool   `json:"isHuman"`
 }
-

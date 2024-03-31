@@ -10,7 +10,21 @@
 <body>
     <a href="/allcharacters">AllCharacters</a>
 
-    {{range .}}
+    <div class="ctn">
+
+        {{if (gt .PageData.CurrentPage 0)}}
+        <a href="/allstands?page={{.PageData.PreviousPage}}">PreviousPage</a>
+        {{else}}
+        <span>PreviousPage</span>
+        {{end}}
+        {{.PageData.CurrentPage}}
+        {{if (lt .PageData.CurrentPage .PageData.MaxPage)}}
+        <a href="/allstands?page={{.PageData.NextPage}}">NextPage</a>
+        {{else}}
+        <span>NextPage</span>
+        {{end}}
+        
+        {{range .StandList}}
         <a href="/stand?id={{.Id}}">
             <div class="card">
                 {{.Id}}
@@ -25,7 +39,8 @@
                 <a href="/favoritreatment?id={{.Id}}&type=stand">add fav</a>
             </div>
         </a>
-    {{end}}
+        {{end}}
+    </div>
 </body>
 </html>
 {{end}}

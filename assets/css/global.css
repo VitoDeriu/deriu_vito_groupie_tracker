@@ -1,0 +1,44 @@
+@font-face{
+    font-family: "Fedora";
+    src: url("/static/fonts/sf_fedora/SF\ Fedora.ttf");
+}
+
+.header{
+    height: 15vh;
+    position: relative;
+    background-color: violet;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bgi{   
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+.nav-bgi{
+    opacity: 0.5;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    font-family: "Fedora";
+    text-decoration: none;
+    color: white;
+}
+
+.logo img{
+    height: 100px;
+
+}

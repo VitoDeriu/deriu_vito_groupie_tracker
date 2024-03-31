@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"GroupieTrackerJJBA/data"
 	"GroupieTrackerJJBA/temps"
 	"encoding/json"
 	"fmt"
@@ -54,7 +55,17 @@ func Filtre(w http.ResponseWriter, r *http.Request) {
 		//appel du json filtré grace a l'url construite
 		CallByFiltre(urlfiltre)
 	}
-	temps.Temp.ExecuteTemplate(w, "AllCharacters", ResultSearchCaracter)
+
+	var DataFiltered data.DataPaginate
+
+	characterListPaginated, paginationData := PaginateCharacter(ResultSearchCaracter)
+	DataFiltered.CharList = characterListPaginated
+	DataFiltered.PageData = paginationData
+
+	temps.Temp.ExecuteTemplate(w, "AllCharacters", &DataFiltered)
+
+
+	// temps.Temp.ExecuteTemplate(w, "AllCharacters", &ResultSearchCaracter)
 }
 
 // prend en parametre une string de combinaison de parametre=valeur pour faire un call avec ces query
