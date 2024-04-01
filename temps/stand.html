@@ -4,9 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JJBA Tracker</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon/faviconJotaro.ico">    
+    <link rel="stylesheet" href="/static/css/global.css">
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navlink">
+                <a href="/allstands">Stands</a>
+                <a href="/allcharacters">Manieurs</a>
+            </div>
+            <div class="logo">
+                <a href="/"><img src="/static/img/logo_jjba.png" alt="logo"></a>
+            </div>
+            <div class="search">
+                <a href="/favoris">Favoris</a>
+                <form action="/recherchetreatment" method="POST">
+                    <input type="text" name="search" placeholder="Rechercher"/>
+                    <button class="btn-submit" type="submit"><img src="/static/img/noun-search-6715797.png" alt=""></button>
+                </form>
+            </div>
+        </nav>
+    </header>
     <img src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}" alt="{{.Image}}">
     {{.Name}}
     {{.AlternateName}}
