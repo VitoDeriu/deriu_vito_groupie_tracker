@@ -301,26 +301,24 @@
                     </fieldset>
                     <button type="submit">filtrer</button>
                 </form>
-            </div>  
-            <div class="ctn">
-                <div class="ctn-cards">
-                    {{range .CharList}}
-                    <a href="/character?id={{.Id}}">
-                        <div class="card">
-                            <img
-                            src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}"
-                            alt="{{.Image}}"
-                            />
-                            {{.Id}} {{.Name}} {{.JapaneseName}} {{.Abilities}}
-                            {{.Chapter}} {{.Nationality}} {{.Catchphrase}}
-                            {{.Family}} {{.Chapter}} {{.Living}} {{.IsHuman}}
-                            <a href="/favoritreatment?id={{.Id}}&type=manieur"
-                            >add fav</a
-                            >
-                        </div>
-                    </a>
-                    {{end}}
-                </div>
+            </div>
+            <div class="ctn-cards">
+                {{range .CharList}}
+                <a href="/character?id={{.Id}}">
+                    <div class="card">
+                        <img
+                        src="https://jojos-bizarre-api.netlify.app/assets/{{.Image}}"
+                        alt="{{.Image}}"
+                        />
+                        {{.Id}} {{.Name}} {{.JapaneseName}} {{.Abilities}}
+                        {{.Chapter}} {{.Nationality}} {{.Catchphrase}}
+                        {{.Family}} {{.Chapter}} {{.Living}} {{.IsHuman}}
+                        <a href="/favoritreatment?id={{.Id}}&type=manieur"
+                        >add fav</a
+                        >
+                    </div>
+                </a>
+                {{end}}
             </div>
             <div class="pagination">
                 {{if (gt .PageData.CurrentPage 0)}}

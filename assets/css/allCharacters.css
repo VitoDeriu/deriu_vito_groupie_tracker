@@ -36,10 +36,6 @@ fieldset{
     display: flex;
 }
 
-.ctn{
-    background-color: yellow;
-}
-
 .ctn-cards{
     background-color: green;
     display: flex;
@@ -52,7 +48,6 @@ fieldset{
     margin: 2vw;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    
 }
 
 

@@ -101,12 +101,10 @@ body{
 }
 
 .pagination{
-    /* background-color: violet; */
     display: flex;
     justify-content: center;
     gap: 10px;
     height: 5vh;
-
 }
 
 .pgnt-btn{
@@ -117,5 +115,4 @@ body{
     align-items: center;
     justify-content: center;
     background-color: gainsboro;
-    
 }
